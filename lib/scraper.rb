@@ -1,3 +1,4 @@
+  
 require 'open-uri'
 require 'pry'
 
@@ -18,7 +19,7 @@ class Scraper
     students
   end
 
-  def self.scrape_profile_page(profile_url)
+ def self.scrape_profile_page(profile_url)
     student_profile = {}
     html = open(profile_url)
     profile = Nokogiri::HTML(html)
@@ -37,6 +38,4 @@ class Scraper
     student_profile[:bio] = profile.css("div.main-wrapper.profile .description-holder p").text
     student_profile
   end
-
 end
-
